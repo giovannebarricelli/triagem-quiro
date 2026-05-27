@@ -1,0 +1,74 @@
+:root { --gold: #d4af37; --dark: #050505; --text: #ffffff; }
+
+body { 
+    margin: 0; 
+    background: radial-gradient(circle at 80% 50%, #1a1a1a 0%, #050505 70%); 
+    color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; 
+}
+
+/* Fundo: Doutor cortado na lateral direita */
+.bg-dr-container {
+    position: fixed; top: 0; right: 0; width: 45%; height: 100%;
+    z-index: -1; opacity: 0.4; pointer-events: none;
+    mask-image: linear-gradient(to left, black 80%, transparent 100%);
+}
+.bg-dr-img { 
+    width: 100%; height: 100%; object-fit: cover; 
+    object-position: 100% 50%; 
+}
+
+/* Cabeçalho */
+.navbar { padding: 40px 5% 20px 5%; background: transparent; border-bottom: 1px solid rgba(212,175,55,0.2); }
+.name { font-weight: 900; font-size: 32px; display: block; }
+.specialty { color: var(--gold); font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; }
+
+/* Conteúdo */
+.main-wrapper { display: flex; width: 100%; min-height: 70vh; align-items: center; }
+.content-side { width: 60%; padding: 40px 5%; display: flex; flex-direction: column; align-items: flex-start; text-align: left; z-index: 2; }
+
+/* Título com brilho dourado em movimento */
+.page-title { 
+    font-size: 42px; font-weight: 900; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 0.1em;
+    background: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gold-shimmer 4s linear infinite;
+    text-shadow: 0 0 10px rgba(184, 134, 11, 0.3);
+}
+@keyframes gold-shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.triagem-subtitle { font-size: 18px; color: #fff; margin-bottom: 30px; max-width: 450px; font-weight: 600; }
+
+/* Botões */
+.triage-grid { display: grid; gap: 15px; width: 100%; max-width: 400px; }
+.triage-btn { 
+    padding: 22px; border-radius: 10px; border: none; cursor: pointer; color: white; font-weight: 900; transition: 0.3s;
+    display: flex; flex-direction: column; align-items: center;
+}
+.triage-btn span { font-size: 16px; margin-bottom: 5px; }
+.triage-btn small { font-size: 11px; text-transform: uppercase; opacity: 0.9; }
+
+.triage-btn.red { background: #dc2626; box-shadow: 0 0 15px rgba(220, 38, 38, 0.4); }
+.triage-btn.yellow { background: #ca8a04; box-shadow: 0 0 15px rgba(202, 138, 4, 0.4); }
+.triage-btn.green { background: #16a34a; box-shadow: 0 0 15px rgba(22, 163, 74, 0.4); }
+.triage-btn:hover { transform: scale(1.03); }
+
+/* Rodapé de Impacto */
+.footer-impact { 
+    margin-top: 40px; text-align: left; border-top: 1px solid rgba(212,175,55,0.2);
+    padding-top: 20px; width: 100%; max-width: 400px;
+}
+.impact-text { font-size: 14px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; margin-bottom: 10px; }
+.cbo-text { font-size: 18px; font-weight: 900; letter-spacing: 0.3em; color: var(--gold); }
+
+/* Ajuste Mobile */
+@media (max-width: 900px) {
+    .content-side { width: 100%; align-items: center; text-align: center; }
+    .bg-dr-container { width: 100%; opacity: 0.15; mask-image: linear-gradient(to bottom, black 20%, transparent 80%); }
+    .bg-dr-img { object-position: center top; }
+    .footer-impact { text-align: center; }
+}

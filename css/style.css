@@ -1,0 +1,98 @@
+:root { 
+    --gold: #d4af37; 
+    --metal-gold: linear-gradient(90deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    --dark: #050505; 
+    --text: #ffffff; 
+}
+
+body { margin: 0; background-color: var(--dark); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+/* Cabeçalho */
+.navbar { padding: 30px 5%; background: var(--dark); border-bottom: 2px solid var(--gold); position: relative; z-index: 10; }
+.name { font-weight: 900; font-size: 32px; display: block; }
+.specialty { color: var(--gold); font-size: 10px; letter-spacing: 0.5em; text-transform: uppercase; }
+
+/* Estrutura */
+.main-wrapper { display: flex; width: 100%; min-height: 80vh; position: relative; }
+
+.content-side { 
+    width: 65%; padding: 50px 5%; z-index: 5; 
+    display: flex; flex-direction: column; justify-content: center;
+}
+
+/* Título */
+.headline { font-size: 70px; font-weight: 900; line-height: 0.9; text-transform: uppercase; margin: 0 0 30px 0; }
+
+.bottom-line { 
+    display: block;
+    margin-top: 5px;
+    /* NOVO: Ouro Metálico Escovado */
+    background: linear-gradient(90deg, #b8860b, #fdfcf0, #d4af37, #fdfcf0, #b8860b);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gold-shimmer 10s linear infinite;
+    text-shadow: 0 0 10px rgba(184, 134, 11, 0.4);
+}
+
+@keyframes gold-shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+.description { font-size: 20px; font-style: italic; border-left: 4px solid var(--gold); padding: 20px; background: rgba(255,255,255,0.03); max-width: 600px; }
+
+/* Botão Premium */
+.cta-button { 
+    margin-top: 30px; 
+    background: var(--metal-gold); 
+    color: #000000; 
+    padding: 25px 60px; 
+    border: none; 
+    border-radius: 50px; 
+    font-weight: 900; 
+    font-size: 22px; 
+    cursor: pointer; 
+    text-transform: uppercase;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), 0 0 40px rgba(212, 175, 55, 0.2);
+    transition: all 0.4s ease;
+    animation: glow-pulse 2s infinite;
+}
+
+.cta-button:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.7), 0 0 60px rgba(212, 175, 55, 0.4);
+}
+
+@keyframes glow-pulse {
+    0% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+    50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.7); }
+    100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
+}
+
+/* Rodapé Animado */
+.footer-animated {
+    margin-top: 40px; text-align: center; color: var(--text);
+    opacity: 0; animation: fadeInUp 1.5s ease-out forwards;
+}
+.cbo-text { display: block; font-size: 24px; font-weight: 900; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 5px; }
+.slogan-text { display: block; font-size: 14px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; }
+
+/* Dr. Fixo */
+.side-photo { position: fixed; right: 0; top: 120px; width: 35%; height: calc(100vh - 120px); z-index: 1; background: var(--dark); }
+.foto-dr-right { width: 100%; height: 100%; object-fit: cover; object-position: top center; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%); mask-image: linear-gradient(to right, transparent 0%, black 15%); }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+    .main-wrapper { flex-direction: column; }
+    .content-side { width: 100%; text-align: center; padding: 30px 20px; }
+    .side-photo { width: 30%; opacity: 0.6; }
+    .cta-button { margin: 20px auto; }
+}

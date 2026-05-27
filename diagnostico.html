@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triagem Pré-Clínica | Dr. Alessandro Ferreira</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/diagnostico.css">
+</head>
+<body>
+
+    <div class="bg-dr-container">
+        <img src="lateraldr.png" alt="Dr. Alessandro Ferreira" class="bg-dr-img">
+    </div>
+
+    <header class="navbar">
+        <div class="logo-box">
+            <span class="name">DR. ALESSANDRO FERREIRA</span>
+            <span class="specialty">QUIROPRAXIA CLÍNICA AVANÇADA</span>
+        </div>
+    </header>
+
+    <main class="main-wrapper">
+        <section class="content-side">
+            <h1 class="page-title">TRIAGEM PRÉ-CLÍNICA</h1>
+            
+            <p class="triagem-subtitle">Selecione o nível da sua dor para que a equipe possa agilizar seu atendimento:</p>
+
+            <div class="triage-grid">
+                <button onclick="triage('URGENTE')" class="triage-btn red">
+                    <span>PRECISO DE ATENDIMENTO</span>
+                    <small>Urgência</small>
+                </button>
+                
+                <button onclick="triage('MODERADO')" class="triage-btn yellow">
+                    <span>QUERO EVITAR QUE AGRAVE</span>
+                    <small>Moderado</small>
+                </button>
+                
+                <button onclick="triage('ORIENTACAO')" class="triage-btn green">
+                    <span>NÃO SINTO DOR, MAS QUERO ORIENTAÇÃO</span>
+                    <small>Prevenção</small>
+                </button>
+            </div>
+
+            <footer class="footer-impact">
+                <p class="impact-text">CUIDADO ESPECIALIZADO, RESULTADOS QUE VOCÊ SENTE.</p>
+                <span class="cbo-text">CBO: 2251-85</span>
+            </footer>
+        </section>
+    </main>
+
+    <script src="js/diagnostico.js"></script>
+</body>
+</html>
